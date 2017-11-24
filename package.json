@@ -1,6 +1,6 @@
 {
   "name": "faucethubapi",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Unofficial module for faucethub.io API",
   "main": "app.js",
   "scripts": {
@@ -15,5 +15,10 @@
   "license": "MIT",
   "dependencies": {
     "request": "^2.83.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AntoninLefevre/faucethubapi"
   }
 }
+
