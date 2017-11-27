@@ -23,7 +23,7 @@ class FaucethubAPI {
      * @param data The data to be sent
      * @param callback The callback
      */
-    private static APIRequest(method, data, callback) {
+  	static APIRequest(method, data, callback) {
         request.post({
             headers: {'content-type' : 'application/x-www-form-urlencoded'},
             url: 'https://faucthub.io/api/v1/' + method + '?' + querystring.stringify(data)
