@@ -26,7 +26,7 @@ class FaucethubAPI {
   	static APIRequest(method, data, callback) {
         request.post({
             headers: {'content-type' : 'application/x-www-form-urlencoded'},
-            url: 'https://faucthub.io/api/v1/' + method + '?' + querystring.stringify(data)
+            url: 'https://faucethub.io/api/v1/' + method + '?' + querystring.stringify(data)
         }, function(error, response, body){
             if(error) callback({status: 504, message:'Connection error'});
             else callback(body);
@@ -41,7 +41,7 @@ class FaucethubAPI {
      * @param ip_address Include the user's IP address to help contribute to the fight against bots and malicious users
      * @param callback The callback
      */
-    public send(to, amount, referral, ip_address, callback) {
+    send(to, amount, referral, ip_address, callback) {
         FaucethubAPI.APIRequest('send', {
             api_key: this.api_key,
             currency: this.currency,
@@ -57,7 +57,7 @@ class FaucethubAPI {
      * @param count A value between 1 and 10, defaults to 1
      * @param callback The callback
      */
-    public getPayouts(count, callback) {
+    getPayouts(count, callback) {
         FaucethubAPI.APIRequest('payouts', {
             api_key: this.api_key,
             count: count
@@ -68,7 +68,7 @@ class FaucethubAPI {
      * @description The method to get a list of all the currencies we support on our platform and their status
      * @param callback The callback
      */
-    public getCurrencies(callback) {
+    getCurrencies(callback) {
         FaucethubAPI.APIRequest('currencies', {
             api_key: this.api_key
         }, callback)
@@ -78,7 +78,7 @@ class FaucethubAPI {
      * @description The method to get your account balance in any supported currency
      * @param callback The callback
      */
-    public getBalance(callback) {
+    getBalance(callback) {
         FaucethubAPI.APIRequest('getbalance', {
             api_key: this.api_key,
             currency: this.currency
@@ -90,7 +90,7 @@ class FaucethubAPI {
      * @param address The coin address you checking
      * @param callback The callback
      */
-    public checkAddress(address, callback) {
+    checkAddress(address, callback) {
         FaucethubAPI.APIRequest('checkaddress', {
             api_key: this.api_key,
             currency: this.currency
