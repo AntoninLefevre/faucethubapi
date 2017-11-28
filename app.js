@@ -93,7 +93,8 @@ class FaucethubAPI {
     checkAddress(address, callback) {
         FaucethubAPI.APIRequest('checkaddress', {
             api_key: this.api_key,
-            currency: this.currency
+            currency: this.currency,
+            address: address
         }, callback)
     }
 }
